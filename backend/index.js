@@ -18,9 +18,9 @@ app.use((req, res, next) => {
 })
 app.get(/.*/, (req, res) => {
     console.log(`${new Date().toISOString()} GET`)
-    res.json({id: ID})
+    res.json({ message: `SUCCESS ${ID}` })
 })
 
 app.listen(PORT, () => {
     console.log(`Backend started on ${PORT}. ctrl+c to exit`)
-) 
+}) 
