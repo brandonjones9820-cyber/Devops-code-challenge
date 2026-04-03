@@ -16,7 +16,10 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', '*')
     next();
 })
-app.get('/api', (req, res) => {
+app.get('/health', (req, res) => {
+  res.sendStatus(200)
+})
+app.get('/api*', (req, res) => {
     console.log(`${new Date().toISOString()} GET`)
     res.json({ message: `SUCCESS ${ID}` })
 })
